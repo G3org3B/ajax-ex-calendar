@@ -10,15 +10,33 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
 
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+
     <title></title>
   </head>
   <body>
     <div class="container">
+      <div class="title">
+        <h1></h1>
+      </div>
+      <div class="element">
+        <button class="precedente"type="button" name="button">MESE PRECEDENTE</button>
+      </div>
+      <div class="meseCorrente">
+      </div>
+      <div class="element">
+        <button  class="sucessivo"type="button" name="button">MESE SUCESSIVO</button>
+        <ul>
 
+        </ul>
+      </div>
+
+      <div class="Giorni">
+        <script id="giorniMese" type="text/x-handlebars-template">
+            <li>{{variabili}}</li>
+        </script>
+      </div>
     </div>
-
-
-
     <script src="main.js" type="text/javascript">
     </script>
   </body>

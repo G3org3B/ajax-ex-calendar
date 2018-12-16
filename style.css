@@ -8,4 +8,18 @@
   width: 100%;
   height: 700px;
   background: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.element {
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  background: blue;
+  margin-top: 40px;
+}
+.template {
+  display: none;
 }
