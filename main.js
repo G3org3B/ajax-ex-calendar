@@ -23,13 +23,13 @@ function printList(date) {
 
   $('.container .title').text(date.format('MMMMM YYYY'));
 
-  var giorniMese = date.giorniMese();
+  var giornoMese = date.giornoMese();
 
   //stampiamo con il ciclo for i numeri del mese
 
-  for (var i = 1; i <= giorniMese.length; i++)
+  for (var i = 1; i <= giornoMese; i++)
   {
-    var itemTemplate = $('.template li').clone();
+    var itemTemplate = $('.giorniMese li').clone();
 
     itemTemplate.text(i + ' ' + date.format('MMM'));
 

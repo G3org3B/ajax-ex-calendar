@@ -14,9 +14,9 @@
 }
 .element {
   float: left;
-  width: 100px;
-  height: 100px;
-  padding: 20px;
+  width: 150px;
+  height: 150px;
+  padding: 30px;
   background: blue;
   margin-top: 40px;
 }
