@@ -8,7 +8,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
 
     <script src="https://momentjs.com/downloads/moment.min.js"></script>
 
@@ -17,31 +16,34 @@
   <body>
     <div class="container">
       <!-- G______________________________________ -->
-      <div class="title element">
-        <h1>Jennuary 2017</h1>
-      </div>
-      <!-- G______________________________________ -->
+      <div class="wrapperbar">
+        <div class="title element">
+          <h1>Jennuary 2017</h1>
+        </div>
+        <!-- G______________________________________ -->
 
-      <div class="element">
-        <button class="precedente">MESE PRECEDENTE</button>
-      </div>
-      <!-- G______________________________________ -->
-      <div class="meseCorrente element">
+        <div class="element">
+          <button class="precedente">MESE PRECEDENTE</button>
+        </div>
+        <!-- G______________________________________ -->
+        <div class="meseCorrente element">
+
+        </div>
+        <!-- G______________________________________ -->
+        <div class="element">
+          <button  class="sucessivo">MESE SUCESSIVO</button>
+        </div>
 
       </div>
       <!-- G______________________________________ -->
-      <div class="element">
-        <button  class="sucessivo">MESE SUCESSIVO</button>
-      </div>
-      <!-- G______________________________________ -->
-      <ul>
+      <ul class="squareli">
 
       </ul>
       <!-- G______________________________________ -->
 
-      <script id="giorniMese" type="text/x-handlebars-template">
+      <div id="giorniMese">
           <li></li>
-      </script>
+      </div>
     </div>
     <script src="main.js" type="text/javascript">
     </script>

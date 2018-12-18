@@ -28,28 +28,72 @@ $(document).ready(function() {
      call(date);
    }
 
+  });
+
+  // Creiamo la funzione printlist()
+
+  function printList(date) {
+
+    $('.title h1').text(date.format('MMMM YYYY'));
+    $('ul').html('');
+
+    var giorni = date.daysInMonth();
+     console.log(giorni);
+
+    //stampiamo con il ciclo for i numeri del mese
+
+    for (var i = 1; i <= giorni; i++)
+    {
+      var liTemplate = $('#giorniMese li').clone();
+
+      var lidate = date.format('MMM YYYY');
+
+      liTemplate.text(i + ' ' + lidate);
+
+      $('.container ul').append(liTemplate);
+    }
+  }
+
 });
 
-// Creiamo la funzione printlist()
+function call(date)
+{
+  $.ajax({
+    url: 'https://holidayapi.com/v1/holidays',
+    method: 'GET',
+    data: {
+      key: '6d29431d-847d-477b-b426-99c0f38d7a43',
+      country: 'IT',
+      month: date.format('MM'),
+      year: date.format('YYYY')
+    },
+    success: function(data)
+    {
+      var holidays = data.holidays;
+      $('li').each(function() {
+        var text = $(this).text();
 
-function printList(date) {
+        var newDate = moment(text, 'D MMMM-YYYY');
 
-  $('.title h1').text(date.format('MMMM YYYY'));
-  $('ul').html('');
+        for (var i = 0; i < holidays.length; i++) {
 
-  var giorni = date.giorniDelMese();
-   console.log(giorni);
+          var holidayDate = holidays[i].date;
 
-  //stampiamo con il ciclo for i numeri del mese
+          console.log('datali:' + newDate.format('YYYY-MM-DD'));
+          console.log('dataholiday:' + holidayDate);
 
-  for (var i = 1; i <= giorni; i++)
-  {
-    var liTemplate = $('#giorniMese li').clone();
+          if (newDate.format('YYYY-MM-DD') == holidayDate) {
+            $(this).addClass('active');
+            $(this).append('-' + holidays[i].name);
+          }
 
-    var lidate = date.format('MMMM-YYYY');
+        }
+      });
+    },
+    error: function()
+    {
+      alert('errore');
+    }
 
-    liTemplate.text(i + ' ' + lidate);
-
-    $('.container ul').append(liTemplate);
-  }
+  });
 }
