@@ -29,7 +29,7 @@ function printList(date) {
 
   for (var i = 1; i <= giornoMese; i++)
   {
-    var itemTemplate = $('.giorniMese li').clone();
+    var itemTemplate = $('#giorniMese li').clone();
 
     itemTemplate.text(i + ' ' + date.format('MMM'));
 
